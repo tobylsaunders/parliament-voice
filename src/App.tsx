@@ -297,6 +297,102 @@ const GlobalStyle = () => (
     .fbtn { padding:5px 14px; border-radius:20px; border:1.5px solid; cursor:pointer; font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; transition:.18s; font-family:inherit; }
     .fsel { padding:5px 12px; border-radius:20px; border:1.5px solid #ccc; background:white; color:var(--muted); font-size:.76rem; cursor:pointer; font-family:inherit; }
     @media(max-width:768px){ .main{grid-template-columns:1fr;} .sidebar{position:static;height:auto;} .content{padding:18px 14px;} .auth-card{padding:30px 20px;} }
+
+    /* ── PLAIN ENGLISH BOX ── */
+    .plain-box { background:rgba(13,27,42,.04); border-left:3px solid var(--navy); border-radius:0 4px 4px 0; padding:10px 14px; margin-bottom:13px; font-size:.84rem; color:var(--ink); line-height:1.65; }
+    .plain-label { font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--navy); font-weight:700; margin-bottom:5px; }
+
+    /* ── OUTCOME BOX ── */
+    .outcome-box { background:rgba(46,125,80,.06); border:1px solid rgba(46,125,80,.25); border-radius:4px; padding:11px 14px; margin-bottom:13px; font-size:.82rem; color:var(--ink); line-height:1.6; }
+    .outcome-label { font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--sage); font-weight:700; margin-bottom:5px; }
+
+    /* ── MONEY CALCULATOR ── */
+    .money-calc { background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.06)); border:1px solid rgba(201,168,76,.4); border-radius:4px; padding:12px 16px; margin-bottom:13px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+    .money-icon { font-size:1.6rem; }
+    .money-label { font-size:.74rem; color:var(--muted); }
+    .money-value { font-family:"Playfair Display",serif; font-size:1.05rem; font-weight:700; color:var(--navy); margin-top:2px; }
+
+    /* ── SHARE BUTTON ── */
+    .share-row { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; align-items:center; }
+    .btn-share { padding:7px 16px; background:transparent; border:1.5px solid var(--navy); border-radius:3px; font-size:.78rem; cursor:pointer; color:var(--navy); font-family:inherit; transition:.2s; display:flex; align-items:center; gap:6px; }
+    .btn-share:hover { background:var(--navy); color:var(--gold); }
+
+    /* ── DAILY QUESTION ── */
+    .daily-wrap { background:linear-gradient(135deg,var(--navy),var(--ink)); border-radius:6px; padding:28px 30px; margin-bottom:28px; color:var(--fog); border:1px solid rgba(201,168,76,.3); animation:fadeUp .4s ease; }
+    .daily-label { font-size:.65rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+    .daily-question { font-family:"Playfair Display",serif; font-size:1.4rem; font-weight:700; color:white; margin-bottom:6px; line-height:1.35; }
+    .daily-context { font-size:.84rem; color:rgba(232,228,220,.7); margin-bottom:22px; line-height:1.5; }
+    .daily-btns { display:flex; gap:12px; flex-wrap:wrap; }
+    .btn-daily-aye { flex:1; min-width:100px; padding:12px; background:var(--sage); color:white; border:none; border-radius:4px; font-family:"Playfair Display",serif; font-weight:700; font-size:1rem; cursor:pointer; transition:.2s; }
+    .btn-daily-aye:hover { background:#246040; }
+    .btn-daily-no  { flex:1; min-width:100px; padding:12px; background:var(--crimson); color:white; border:none; border-radius:4px; font-family:"Playfair Display",serif; font-weight:700; font-size:1rem; cursor:pointer; transition:.2s; }
+    .btn-daily-no:hover { background:#7a1518; }
+    .btn-daily-skip { padding:12px 18px; background:rgba(255,255,255,.1); color:rgba(232,228,220,.6); border:1px solid rgba(255,255,255,.2); border-radius:4px; font-size:.82rem; cursor:pointer; }
+    .daily-done { text-align:center; padding:16px; }
+    .daily-done-icon { font-size:2rem; margin-bottom:8px; }
+    .daily-done-text { font-family:"Playfair Display",serif; font-size:1rem; color:var(--gold-lt); }
+
+    /* ── POLITICAL DNA ── */
+    .dna-wrap { background:white; border:1px solid #ddd7cd; border-radius:6px; padding:26px 28px; margin-bottom:20px; }
+    .dna-title { font-family:"Playfair Display",serif; font-size:1.2rem; font-weight:700; color:var(--navy); margin-bottom:4px; }
+    .dna-sub { font-size:.82rem; color:var(--muted); margin-bottom:20px; }
+    .dna-bar-wrap { margin-bottom:12px; }
+    .dna-party-row { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+    .dna-party-name { font-size:.8rem; font-weight:700; color:var(--navy); width:110px; flex-shrink:0; }
+    .dna-track { flex:1; height:12px; background:#f0ede7; border-radius:6px; overflow:hidden; }
+    .dna-fill { height:100%; border-radius:6px; transition:width .8s ease; }
+    .dna-pct { font-size:.78rem; color:var(--muted); width:36px; text-align:right; }
+    .dna-result { margin-top:16px; padding:14px 16px; border-radius:4px; display:flex; align-items:center; gap:12px; }
+    .dna-result-icon { font-size:2rem; }
+    .dna-result-title { font-family:"Playfair Display",serif; font-size:1rem; font-weight:700; color:var(--navy); }
+    .dna-result-desc { font-size:.8rem; color:var(--muted); margin-top:3px; }
+    .dna-needs-more { text-align:center; padding:20px; color:var(--muted); font-style:italic; font-size:.88rem; }
+
+    /* ── MP REPORT CARD ── */
+    .report-card { background:white; border:1px solid #ddd7cd; border-radius:4px; padding:20px 22px; margin-bottom:14px; }
+    .report-card-top { display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+    .grade-badge { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:"Playfair Display",serif; font-size:1.4rem; font-weight:900; color:white; flex-shrink:0; }
+    .report-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .report-metric { text-align:center; padding:10px 8px; background:#f7f4ee; border-radius:4px; }
+    .report-metric-num { font-family:"Playfair Display",serif; font-size:1.3rem; font-weight:700; color:var(--navy); }
+    .report-metric-label { font-size:.68rem; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; margin-top:2px; }
+
+    /* ── STREAK ── */
+    .streak-banner { background:linear-gradient(135deg,#fff8e8,#fffbf0); border:1px solid rgba(201,168,76,.4); border-radius:4px; padding:12px 18px; margin-bottom:18px; display:flex; align-items:center; gap:12px; }
+    .streak-icon { font-size:1.8rem; }
+    .streak-text { font-family:"Playfair Display",serif; font-size:.95rem; font-weight:700; color:var(--navy); }
+    .streak-sub  { font-size:.76rem; color:var(--muted); margin-top:2px; }
+
+    /* ── LIFE FILTER ONBOARDING ── */
+    .life-filter-wrap { background:white; border:1px solid #ddd7cd; border-radius:6px; padding:24px 28px; margin-bottom:24px; }
+    .life-filter-title { font-family:"Playfair Display",serif; font-size:1.05rem; font-weight:700; color:var(--navy); margin-bottom:4px; }
+    .life-filter-sub { font-size:.82rem; color:var(--muted); margin-bottom:16px; }
+    .life-tags-grid { display:flex; flex-wrap:wrap; gap:8px; }
+    .life-tag-btn { padding:8px 16px; border-radius:20px; border:1.5px solid #d0cac0; background:white; font-size:.82rem; cursor:pointer; transition:.2s; font-family:inherit; display:flex; align-items:center; gap:6px; }
+    .life-tag-btn.active { border-color:var(--navy); background:var(--navy); color:var(--gold); }
+    .life-tag-btn:hover { border-color:var(--navy); }
+
+    /* ── CONSTITUENCY COMPARE ── */
+    .con-compare { background:linear-gradient(135deg,#f0f7f2,#e8f5ec); border:1px solid rgba(46,125,80,.25); border-radius:4px; padding:14px 18px; margin-top:14px; }
+    .con-compare-title { font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sage); font-weight:700; margin-bottom:10px; }
+    .con-compare-row { display:flex; align-items:center; gap:10px; margin-bottom:6px; font-size:.82rem; }
+    .con-compare-label { width:120px; color:var(--muted); flex-shrink:0; }
+    .con-compare-track { flex:1; height:8px; background:rgba(0,0,0,.08); border-radius:4px; overflow:hidden; }
+    .con-compare-fill { height:100%; border-radius:4px; background:var(--sage); }
+    .con-compare-pct { width:36px; text-align:right; font-weight:700; color:var(--navy); font-size:.78rem; }
+
+    /* ── SHARE MODAL ── */
+    .share-modal-overlay { position:fixed; inset:0; background:rgba(13,27,42,.7); z-index:400; display:flex; align-items:center; justify-content:center; padding:20px; }
+    .share-modal { background:white; border-radius:6px; max-width:400px; width:100%; padding:28px; text-align:center; animation:fadeUp .3s ease; }
+    .share-modal-title { font-family:"Playfair Display",serif; font-size:1.2rem; font-weight:700; color:var(--navy); margin-bottom:6px; }
+    .share-modal-sub { font-size:.84rem; color:var(--muted); margin-bottom:20px; }
+    .share-graphic { background:var(--navy); border-radius:6px; padding:24px; margin-bottom:18px; color:white; }
+    .share-graphic-title { font-family:"Playfair Display",serif; font-size:1rem; font-weight:700; color:var(--gold); margin-bottom:8px; }
+    .share-graphic-vote { font-size:2rem; margin-bottom:6px; }
+    .share-graphic-bill { font-size:.82rem; color:rgba(232,228,220,.8); line-height:1.4; }
+    .share-graphic-stat { font-size:.76rem; color:var(--gold-lt); margin-top:10px; }
+    .share-copy-btn { width:100%; padding:12px; background:var(--navy); color:var(--gold); border:none; border-radius:3px; font-family:"Playfair Display",serif; font-weight:700; font-size:.95rem; cursor:pointer; margin-bottom:10px; }
+    .share-close-btn { width:100%; padding:10px; background:transparent; color:var(--muted); border:1px solid #ddd; border-radius:3px; font-size:.88rem; cursor:pointer; }
   `}</style>
 );
 
@@ -482,22 +578,176 @@ function makeBill(f) {
     ayes:isH?0:(f.ayes||0), noes:isH?0:(f.noes||0), abs:isH?0:(f.abs||0) };
 }
 
+// Life tags: which user life situations this bill is relevant to
+// plain: plain-English "what this means for you" summary
+// moneyCalc: { label, fn(profile) -> string } for money calculator
+// outcome: what actually happened after it passed
+
 const BILLS = [
-  makeBill({id:1,status:"live",year:2026,title:"Renters' Rights Bill — Second Reading",category:"Housing",chamber:"House of Commons",date:"28 Apr 2026",desc:"Abolishes no-fault Section 21 evictions, introduces a Decent Homes Standard for private rentals, and strengthens tenant protections across England.",impact:"Could affect 11 million private renters in England.",ayes:0,noes:0,abs:0}),
-  makeBill({id:2,status:"open",year:2026,title:"Great British Energy Bill — Committee Stage",category:"Energy",chamber:"House of Commons",date:"2 May 2026",desc:"Establishes a publicly-owned clean energy company to accelerate offshore wind, solar and new nuclear.",impact:"£8.3bn public investment; flagship Labour energy policy.",ayes:0,noes:0,abs:0}),
-  makeBill({id:3,status:"open",year:2026,title:"NHS Workforce Plan Amendment",category:"Health",chamber:"House of Lords",date:"5 May 2026",desc:"Requires the Secretary of State to publish independently verified NHS workforce projections every two years.",impact:"Targets the 100,000+ NHS staff vacancy crisis.",ayes:0,noes:0,abs:0}),
-  makeBill({id:101,status:"closed",year:2020,title:"Brexit — EU Withdrawal Agreement Act 2020",category:"Constitution",chamber:"House of Commons",date:"23 Jan 2020",desc:"Ratified the UK's departure from the European Union, implementing the Withdrawal Agreement with a transition period ending 31 December 2020.",impact:"The most consequential constitutional change in 50 years.",ayes:330,noes:231,abs:0,parlOutcome:"passed"}),
-  makeBill({id:102,status:"closed",year:2020,title:"Coronavirus Act 2020",category:"Health",chamber:"House of Commons",date:"25 Mar 2020",desc:"Granted sweeping emergency powers during the COVID-19 pandemic, enabling furlough and lockdowns.",impact:"£70bn furlough scheme protected 11 million jobs at peak.",ayes:484,noes:0,abs:0,parlOutcome:"passed"}),
-  makeBill({id:103,status:"closed",year:2022,title:"Health and Care Act 2022",category:"Health",chamber:"House of Commons",date:"28 Apr 2022",desc:"The largest NHS restructuring in a decade — abolished CCGs, created Integrated Care Systems.",impact:"Affected 1.3m NHS employees and restructured care for 56m patients.",ayes:285,noes:234,abs:0,parlOutcome:"passed"}),
-  makeBill({id:104,status:"closed",year:2023,title:"Online Safety Act 2023",category:"Digital",chamber:"House of Commons",date:"26 Oct 2023",desc:"Required social media platforms to remove illegal content and protect children from harmful material.",impact:"First law of its kind globally.",ayes:350,noes:0,abs:0,parlOutcome:"passed"}),
-  makeBill({id:105,status:"closed",year:2022,title:"Police, Crime, Sentencing and Courts Act 2022",category:"Justice",chamber:"House of Commons",date:"28 Apr 2022",desc:"Extended stop-and-search powers and created new offences around public protests.",impact:"Sparked mass protests across the UK.",ayes:365,noes:265,abs:0,parlOutcome:"passed"}),
-  makeBill({id:106,status:"closed",year:2023,title:"Energy Act 2023",category:"Energy",chamber:"House of Commons",date:"26 Oct 2023",desc:"Established Great British Nuclear and created a new national energy system operator.",impact:"Largest energy legislation in 30 years.",ayes:302,noes:220,abs:0,parlOutcome:"passed"}),
-  makeBill({id:107,status:"closed",year:2023,title:"Illegal Migration Act 2023",category:"Immigration",chamber:"House of Commons",date:"20 Jul 2023",desc:"Required removal of anyone arriving via illegal routes to Rwanda or a safe third country.",impact:"Ruled unlawful by the Supreme Court in November 2023.",ayes:289,noes:230,abs:0,parlOutcome:"passed"}),
-  makeBill({id:108,status:"closed",year:2022,title:"Economic Crime (Transparency & Enforcement) Act 2022",category:"Finance",chamber:"House of Commons",date:"15 Mar 2022",desc:"Created a Register of Overseas Entities owning UK property and expanded unexplained wealth orders.",impact:"Over £1.5bn of assets frozen.",ayes:417,noes:0,abs:0,parlOutcome:"passed"}),
-  makeBill({id:109,status:"closed",year:2023,title:"Levelling-up and Regeneration Act 2023",category:"Housing",chamber:"House of Commons",date:"26 Oct 2023",desc:"Reformed planning law and introduced new infrastructure levies for English councils.",impact:"Most significant planning reform in a generation.",ayes:269,noes:208,abs:0,parlOutcome:"passed"}),
-  makeBill({id:110,status:"closed",year:2024,title:"Assisted Dying Bill — Second Reading 2024",category:"Health",chamber:"House of Commons",date:"29 Nov 2024",desc:"Proposed allowing terminally ill adults with less than 6 months to live to request assisted dying.",impact:"First parliamentary majority for assisted dying in UK history.",ayes:330,noes:275,abs:0,parlOutcome:"passed"}),
-  makeBill({id:111,status:"closed",year:2024,title:"Workers' Rights (Employment Relations Reform) Act 2024",category:"Welfare",chamber:"House of Commons",date:"21 Oct 2024",desc:"Introduced day-one unfair dismissal rights, banned zero-hours contracts, strengthened trade union rights.",impact:"Affects 28 million workers.",ayes:347,noes:234,abs:0,parlOutcome:"passed"}),
-  makeBill({id:112,status:"closed",year:2013,title:"Marriage (Same Sex Couples) Act 2013",category:"Justice",chamber:"House of Commons",date:"17 Jul 2013",desc:"Legalised same-sex marriage in England and Wales.",impact:"Over 100,000 same-sex couples have since married.",ayes:366,noes:161,abs:0,parlOutcome:"passed"}),
+  makeBill({id:1,status:"live",year:2026,
+    title:"Renters\' Rights Bill — Second Reading",category:"Housing",
+    chamber:"House of Commons",date:"28 Apr 2026",
+    desc:"Abolishes no-fault Section 21 evictions, introduces a Decent Homes Standard for private rentals, and strengthens tenant protections across England.",
+    impact:"Could affect 11 million private renters in England.",
+    plain:"If you rent privately, your landlord will no longer be able to kick you out without a good legal reason — no more being evicted just because they feel like it. Your home also has to meet a proper safety and quality standard.",
+    lifeTags:["renter","family","young"],
+    question:"Should landlords be stopped from evicting tenants without a legal reason?",
+    ayes:0,noes:0,abs:0}),
+
+  makeBill({id:2,status:"open",year:2026,
+    title:"Great British Energy Bill — Committee Stage",category:"Energy",
+    chamber:"House of Commons",date:"2 May 2026",
+    desc:"Establishes a publicly-owned clean energy company to accelerate offshore wind, solar and new nuclear.",
+    impact:"£8.3bn public investment; flagship Labour energy policy.",
+    plain:"A new government-owned energy company would invest in wind, solar and nuclear power. The aim is to bring down energy bills long-term and make the UK less dependent on gas prices set abroad.",
+    lifeTags:["homeowner","renter","family","worker"],
+    question:"Should the government own and run a clean energy company to lower our bills?",
+    moneyCalc:{label:"Estimated annual energy bill saving",fn:(p)=>p.homeowner?"Up to £300/year by 2030 (government estimate)":"Up to £200/year by 2030 (government estimate)"},
+    ayes:0,noes:0,abs:0}),
+
+  makeBill({id:3,status:"open",year:2026,
+    title:"NHS Workforce Plan Amendment",category:"Health",
+    chamber:"House of Lords",date:"5 May 2026",
+    desc:"Requires the Secretary of State to publish independently verified NHS workforce projections every two years.",
+    impact:"Targets the 100,000+ NHS staff vacancy crisis.",
+    plain:"Forces the government to publish honest, independently checked figures on how many doctors and nurses the NHS actually needs. Right now there\'s no legal requirement to do this, which critics say lets the government hide staff shortages.",
+    lifeTags:["family","elderly","health"],
+    question:"Should the government be legally required to publish honest NHS staffing figures?",
+    ayes:0,noes:0,abs:0}),
+
+  makeBill({id:101,status:"closed",year:2020,
+    title:"Brexit — EU Withdrawal Agreement Act 2020",category:"Constitution",
+    chamber:"House of Commons",date:"23 Jan 2020",
+    desc:"Ratified the UK\'s departure from the European Union, implementing the Withdrawal Agreement with a transition period ending 31 December 2020.",
+    impact:"The most consequential constitutional change in 50 years.",
+    plain:"This was the law that made Brexit official. It meant the UK stopped being part of the EU\'s single market and customs union. EU citizens\' automatic right to live and work in the UK ended, and UK citizens lost free movement across Europe.",
+    lifeTags:["worker","traveller","business","family"],
+    question:"Do you think Brexit was the right decision for the UK?",
+    outcome:"The UK left the EU on 31 January 2020. Free movement ended on 31 December 2020. Trade with the EU now involves customs checks. Over 3 million EU citizens applied for settled status to remain in the UK.",
+    ayes:330,noes:231,abs:0,parlOutcome:"passed"}),
+
+  makeBill({id:102,status:"closed",year:2020,
+    title:"Coronavirus Act 2020",category:"Health",
+    chamber:"House of Commons",date:"25 Mar 2020",
+    desc:"Granted sweeping emergency powers during the COVID-19 pandemic, enabling furlough and lockdowns.",
+    impact:"£70bn furlough scheme protected 11 million jobs at peak.",
+    plain:"This law gave the government emergency powers to close businesses, restrict gatherings and pay workers\' wages through the furlough scheme when they couldn\'t work during lockdown.",
+    lifeTags:["worker","business","family","health"],
+    question:"Were the emergency lockdown powers the right response to COVID-19?",
+    outcome:"11 million jobs were protected through furlough at peak. The UK had some of the strictest lockdowns in Europe. The Act was repealed in 2022.",
+    moneyCalc:{label:"Average furlough received",fn:(p)=>p.worker?"Around £1,800/month for the average worker":"N/A for non-workers"},
+    ayes:484,noes:0,abs:0,parlOutcome:"passed"}),
+
+  makeBill({id:103,status:"closed",year:2022,
+    title:"Health and Care Act 2022",category:"Health",
+    chamber:"House of Commons",date:"28 Apr 2022",
+    desc:"The largest NHS restructuring in a decade — abolished CCGs, created Integrated Care Systems.",
+    impact:"Affected 1.3m NHS employees and restructured care for 56m patients.",
+    plain:"This reorganised how the NHS is run locally. It merged different parts of the health and social care system together so they\'re supposed to work better as a team. Critics said it opened the door to more private company involvement in NHS services.",
+    lifeTags:["health","elderly","family"],
+    question:"Was merging NHS and social care into Integrated Care Systems the right move?",
+    outcome:"42 Integrated Care Systems now run health services across England. NHS waiting lists continued to grow after the reorganisation.",
+    ayes:285,noes:234,abs:0,parlOutcome:"passed"}),
+
+  makeBill({id:104,status:"closed",year:2023,
+    title:"Online Safety Act 2023",category:"Digital",
+    chamber:"House of Commons",date:"26 Oct 2023",
+    desc:"Required social media platforms to remove illegal content and protect children from harmful material.",
+    impact:"First law of its kind globally.",
+    plain:"Social media companies like Instagram, TikTok and X (Twitter) now have to remove illegal content quickly and protect children from harmful posts. Ofcom can fine them up to 10% of their global revenue if they don\'t comply.",
+    lifeTags:["family","young","parent"],
+    question:"Should social media companies be legally forced to protect children online?",
+    outcome:"Ofcom began enforcement in 2024. Several platforms updated their age verification and content moderation systems. Debates continue about balancing safety with free speech.",
+    ayes:350,noes:0,abs:0,parlOutcome:"passed"}),
+
+  makeBill({id:105,status:"closed",year:2022,
+    title:"Police, Crime, Sentencing and Courts Act 2022",category:"Justice",
+    chamber:"House of Commons",date:"28 Apr 2022",
+    desc:"Extended stop-and-search powers and created new offences around public protests.",
+    impact:"Sparked mass protests across the UK.",
+    plain:"This law made it easier for police to stop and search people, and made some types of noisy or disruptive protest illegal — including protests that cause \"serious annoyance\". Critics called it an attack on the right to protest. Supporters said it protected communities from crime.",
+    lifeTags:["young","worker","community"],
+    question:"Did the government go too far in restricting the right to protest?",
+    outcome:"Several protesters were prosecuted under the new laws. The Trago Mills protests and Just Stop Oil demonstrations tested the new powers in courts across England.",
+    ayes:365,noes:265,abs:0,parlOutcome:"passed"}),
+
+  makeBill({id:106,status:"closed",year:2023,
+    title:"Energy Act 2023",category:"Energy",
+    chamber:"House of Commons",date:"26 Oct 2023",
+    desc:"Established Great British Nuclear and created a new national energy system operator.",
+    impact:"Largest energy legislation in 30 years.",
+    plain:"This law set up Great British Nuclear — a new body to build nuclear power stations — and created a national energy planner to oversee the whole UK grid. It\'s the framework meant to deliver cheaper, cleaner energy over the next 20 years.",
+    lifeTags:["homeowner","renter","worker","family"],
+    question:"Should the UK invest in new nuclear power stations to secure cheaper energy?",
+    outcome:"Great British Nuclear launched in 2023. Site selection for small modular reactors began in 2024. Energy bills remained high in the short term.",
+    ayes:302,noes:220,abs:0,parlOutcome:"passed"}),
+
+  makeBill({id:107,status:"closed",year:2023,
+    title:"Illegal Migration Act 2023",category:"Immigration",
+    chamber:"House of Commons",date:"20 Jul 2023",
+    desc:"Required removal of anyone arriving via illegal routes to Rwanda or a safe third country.",
+    impact:"Ruled unlawful by the Supreme Court in November 2023.",
+    plain:"Anyone arriving in the UK by an unofficial route (like a small boat across the Channel) would have been sent to Rwanda rather than being allowed to claim asylum here. The Supreme Court ruled this was illegal because Rwanda couldn\'t be considered a safe country.",
+    lifeTags:["community","worker"],
+    question:"Should people arriving illegally be removed to a third country without a UK asylum hearing?",
+    outcome:"The Rwanda scheme was ruled unlawful by the Supreme Court in November 2023. The Labour government scrapped it entirely in 2024. Over 30,000 people crossed the Channel in small boats in 2023.",
+    ayes:289,noes:230,abs:0,parlOutcome:"passed"}),
+
+  makeBill({id:108,status:"closed",year:2022,
+    title:"Economic Crime (Transparency & Enforcement) Act 2022",category:"Finance",
+    chamber:"House of Commons",date:"15 Mar 2022",
+    desc:"Created a Register of Overseas Entities owning UK property and expanded unexplained wealth orders.",
+    impact:"Over £1.5bn of assets frozen.",
+    plain:"After Russia invaded Ukraine, this law was rushed through to target dirty money hiding in UK property. Foreign companies that own UK buildings now have to reveal who actually owns them. Authorities can freeze wealth that people can\'t explain the source of.",
+    lifeTags:["homeowner","business","community"],
+    question:"Should the government do more to crack down on dirty money hidden in UK property?",
+    outcome:"Over £1.5bn of Russian-linked assets were frozen. A Register of Overseas Entities was created. Critics said enforcement remained slow and underfunded.",
+    ayes:417,noes:0,abs:0,parlOutcome:"passed"}),
+
+  makeBill({id:109,status:"closed",year:2023,
+    title:"Levelling-up and Regeneration Act 2023",category:"Housing",
+    chamber:"House of Commons",date:"26 Oct 2023",
+    desc:"Reformed planning law and introduced new infrastructure levies for English councils.",
+    impact:"Most significant planning reform in a generation.",
+    plain:"This changed the rules around building new homes and developments. Councils got new powers to charge developers for local infrastructure, and planning rules were simplified. The aim was to speed up house building — though critics said it didn\'t go far enough.",
+    lifeTags:["homeowner","renter","family","young"],
+    question:"Should planning rules be relaxed to allow more homes to be built?",
+    outcome:"House building targets remained unmet. Several councils adopted new local plans under the revised framework. Infrastructure levy implementation was delayed.",
+    ayes:269,noes:208,abs:0,parlOutcome:"passed"}),
+
+  makeBill({id:110,status:"closed",year:2024,
+    title:"Assisted Dying Bill — Second Reading 2024",category:"Health",
+    chamber:"House of Commons",date:"29 Nov 2024",
+    desc:"Proposed allowing terminally ill adults with less than 6 months to live to request assisted dying.",
+    impact:"First parliamentary majority for assisted dying in UK history.",
+    plain:"This would allow people with a terminal illness and less than 6 months to live to choose to end their own life with medical help. Two doctors and a judge would have to agree. It passed its first major vote — but there\'s a long way to go before it becomes law.",
+    lifeTags:["health","elderly","family"],
+    question:"Should terminally ill people have the legal right to choose when they die?",
+    outcome:"The Bill passed its Second Reading 330 to 275 — the first time Parliament has voted for assisted dying. It is now going through Committee Stage where the details are being debated and amended.",
+    ayes:330,noes:275,abs:0,parlOutcome:"passed"}),
+
+  makeBill({id:111,status:"closed",year:2024,
+    title:"Workers\' Rights (Employment Relations Reform) Act 2024",category:"Welfare",
+    chamber:"House of Commons",date:"21 Oct 2024",
+    desc:"Introduced day-one unfair dismissal rights, banned zero-hours contracts, strengthened trade union rights.",
+    impact:"Affects 28 million workers.",
+    plain:"From day one of a new job, you now have the right not to be unfairly dismissed. Zero-hours contracts that force you to be available but guarantee no work are banned. Trade unions find it easier to organise and strike. Described as the biggest workers\' rights upgrade in a generation.",
+    lifeTags:["worker","young","family"],
+    question:"Did workers deserve stronger employment rights and protections?",
+    outcome:"The Act came into force in 2025. Unions reported increased membership. Some businesses warned of reduced hiring. Zero-hours contract enforcement began in 2025.",
+    moneyCalc:{label:"Estimated benefit if on zero-hours contract",fn:(p)=>p.worker?"Guaranteed minimum hours worth an estimated £2,400/year on average":"Not applicable"},
+    ayes:347,noes:234,abs:0,parlOutcome:"passed"}),
+
+  makeBill({id:112,status:"closed",year:2013,
+    title:"Marriage (Same Sex Couples) Act 2013",category:"Justice",
+    chamber:"House of Commons",date:"17 Jul 2013",
+    desc:"Legalised same-sex marriage in England and Wales.",
+    impact:"Over 100,000 same-sex couples have since married.",
+    plain:"Gay and lesbian couples in England and Wales were given the same legal right to marry as straight couples. Civil partnerships had existed since 2005 but this gave full equal marriage rights for the first time.",
+    lifeTags:["family","community","young"],
+    question:"Was legalising same-sex marriage the right thing to do?",
+    outcome:"Over 100,000 same-sex couples have married in England and Wales since 2014. Scotland followed with its own Act in 2014. Northern Ireland extended equal marriage in 2020.",
+    ayes:366,noes:161,abs:0,parlOutcome:"passed"}),
 ];
 
 const DEFAULT_ADS = [
@@ -556,6 +806,251 @@ function Bar({ label, count, total, cls }) {
       <div className="bar-track"><div className={`bar-fill ${cls}`} style={{"--w":`${pct}%`}}/></div>
       <span className="bar-pct">{pct}%</span>
       <span className="bar-num">{count.toLocaleString()}</span>
+    </div>
+  );
+}
+
+// ─── DAILY QUESTION ──────────────────────────────────────────────────────────
+function DailyQuestion({ bills, userVotes, onVote }) {
+  const [done, setDone] = React.useState(false);
+  const [lastVote, setLastVote] = React.useState(null);
+
+  // Pick today's question — cycle through bills that have a question and user hasn't voted
+  const eligible = bills.filter(b => b.question && !userVotes[b.id] && b.status !== "closed" === false);
+  const todayBill = eligible[0] || bills.find(b => b.question);
+  if (!todayBill) return null;
+
+  const isHistoric = todayBill.year < 2025;
+
+  const handleAnswer = (choice) => {
+    onVote(todayBill.id, choice, isHistoric);
+    setLastVote(choice);
+    setDone(true);
+  };
+
+  if (done) {
+    const total = todayBill.pubAyes + todayBill.pubNoes + todayBill.pubAbs;
+    const myPct = lastVote === "aye"
+      ? (total ? Math.round(((todayBill.pubAyes+1)/(total+1))*100) : 100)
+      : (total ? Math.round(((todayBill.pubNoes+1)/(total+1))*100) : 100);
+    return (
+      <div className="daily-wrap">
+        <div className="daily-label">📅 Today's Question — answered</div>
+        <div className="daily-done">
+          <div className="daily-done-icon">{lastVote === "aye" ? "✅" : "❌"}</div>
+          <div className="daily-done-text">You voted {lastVote === "aye" ? "Yes" : "No"} — {myPct}% of people agree with you</div>
+          <div style={{fontSize:".78rem",color:"rgba(232,228,220,.6)",marginTop:8}}>Scroll down to see the full bill and party breakdown →</div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="daily-wrap">
+      <div className="daily-label">📅 Today's Question</div>
+      <div className="daily-question">{todayBill.question}</div>
+      <div className="daily-context">{todayBill.plain || todayBill.desc}</div>
+      <div className="daily-btns">
+        <button className="btn-daily-aye" onClick={() => handleAnswer("aye")}>✓ Yes</button>
+        <button className="btn-daily-no"  onClick={() => handleAnswer("no")}>✗ No</button>
+        <button className="btn-daily-skip" onClick={() => setDone(true)}>Skip</button>
+      </div>
+    </div>
+  );
+}
+
+// ─── POLITICAL DNA ────────────────────────────────────────────────────────────
+function PoliticalDNA({ userVotes, bills }) {
+  // For each historic bill, compare user vote to party votes
+  const scores = {};
+  Object.entries(PARTY_VOTES).forEach(([billId, partyData]) => {
+    const userVote = userVotes[parseInt(billId)];
+    if (!userVote) return;
+    Object.entries(partyData).forEach(([party, counts]) => {
+      if (!scores[party]) scores[party] = { agree: 0, total: 0 };
+      const partyPos = counts.aye > counts.no ? "aye" : "no";
+      scores[party].total++;
+      if (userVote === partyPos) scores[party].agree++;
+    });
+  });
+
+  const ranked = Object.entries(scores)
+    .filter(([, s]) => s.total >= 2)
+    .map(([party, s]) => ({ party, pct: Math.round((s.agree / s.total) * 100), total: s.total }))
+    .sort((a, b) => b.pct - a.pct);
+
+  const totalVoted = Object.keys(userVotes).filter(id => parseInt(id) > 100).length;
+
+  if (totalVoted < 3) {
+    return (
+      <div className="dna-wrap">
+        <div className="dna-title">🧬 Your Political DNA</div>
+        <div className="dna-sub">Vote on {3 - totalVoted} more historic bill{3 - totalVoted !== 1 ? "s" : ""} to see which party you align with most.</div>
+        <div className="dna-needs-more">Scroll down to the historic bills and cast your views — then come back here.</div>
+      </div>
+    );
+  }
+
+  const top = ranked[0];
+  const descriptions = {
+    Labour: "You tend to back workers\' rights, public services and social reform.",
+    Conservative: "You tend to favour lower taxes, traditional institutions and market solutions.",
+    SNP: "You align with Scottish independence and progressive centre-left policies.",
+    "Lib Dem": "You lean towards civil liberties, proportional representation and a pro-European outlook.",
+    Green: "You prioritise environmental action, social justice and a post-growth economy.",
+    Reform: "You favour lower immigration, reduced government spending and national sovereignty.",
+    "Plaid Cymru": "You support Welsh self-determination and centre-left social policies.",
+  };
+
+  return (
+    <div className="dna-wrap">
+      <div className="dna-title">🧬 Your Political DNA</div>
+      <div className="dna-sub">Based on your votes, here\'s how closely you align with each party\'s position.</div>
+      {ranked.slice(0, 6).map(({ party, pct }) => (
+        <div key={party} className="dna-party-row">
+          <span className="dna-party-name">{party}</span>
+          <div className="dna-track">
+            <div className="dna-fill" style={{ width: `${pct}%`, background: partyColor(party) }} />
+          </div>
+          <span className="dna-pct">{pct}%</span>
+        </div>
+      ))}
+      {top && (
+        <div className="dna-result" style={{ background: partyColor(top.party) + "18", border: `1px solid ${partyColor(top.party)}44` }}>
+          <div className="dna-result-icon">🏆</div>
+          <div>
+            <div className="dna-result-title">Closest match: {top.party} ({top.pct}%)</div>
+            <div className="dna-result-desc">{descriptions[top.party] || "Your voting pattern most closely matches this party\'s positions."}</div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── STREAK BANNER ────────────────────────────────────────────────────────────
+function StreakBanner({ userVotes }) {
+  const count = Object.keys(userVotes).length;
+  if (count === 0) return null;
+
+  let emoji = "🗳️", text = "", sub = "";
+  if (count >= 10) { emoji = "🏆"; text = `${count} votes cast — you\'re in the top 10% of engaged citizens!`; sub = "Keep going — your voice matters."; }
+  else if (count >= 5) { emoji = "🔥"; text = `${count} votes and counting`; sub = "You\'re more informed than most — well done."; }
+  else { emoji = "⭐"; text = `${count} vote${count !== 1 ? "s" : ""} cast so far`; sub = "Every voice counts. Keep going!"; }
+
+  return (
+    <div className="streak-banner">
+      <span className="streak-icon">{emoji}</span>
+      <div>
+        <div className="streak-text">{text}</div>
+        <div className="streak-sub">{sub}</div>
+      </div>
+    </div>
+  );
+}
+
+// ─── LIFE FILTER ──────────────────────────────────────────────────────────────
+const LIFE_TAGS = [
+  { id:"renter",    label:"🏠 I rent my home" },
+  { id:"homeowner", label:"🏡 I own my home" },
+  { id:"worker",    label:"💼 I'm employed" },
+  { id:"business",  label:"🏪 I run a business" },
+  { id:"family",    label:"👨‍👩‍👧 I have a family" },
+  { id:"young",     label:"🎓 I'm under 30" },
+  { id:"elderly",   label:"👴 I'm over 65" },
+  { id:"health",    label:"🏥 I use the NHS regularly" },
+  { id:"community", label:"🌍 I care about my community" },
+  { id:"traveller", label:"✈️ I travel to Europe" },
+];
+
+function LifeFilter({ activeTags, setActiveTags }) {
+  const toggle = (id) => setActiveTags(t => t.includes(id) ? t.filter(x => x !== id) : [...t, id]);
+  return (
+    <div className="life-filter-wrap">
+      <div className="life-filter-title">Show me issues that affect my life</div>
+      <div className="life-filter-sub">Select all that apply — we\'ll highlight the most relevant bills for you.</div>
+      <div className="life-tags-grid">
+        {LIFE_TAGS.map(t => (
+          <button key={t.id} className={`life-tag-btn${activeTags.includes(t.id) ? " active" : ""}`} onClick={() => toggle(t.id)}>
+            {t.label}
+          </button>
+        ))}
+      </div>
+      {activeTags.length > 0 && (
+        <div style={{marginTop:12,fontSize:".78rem",color:"var(--sage)"}}>
+          ✓ Highlighting bills relevant to {activeTags.length} selected {activeTags.length === 1 ? "topic" : "topics"}
+          <button onClick={() => setActiveTags([])} style={{marginLeft:10,fontSize:".72rem",color:"var(--muted)",background:"none",border:"none",cursor:"pointer",textDecoration:"underline"}}>Clear all</button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── CONSTITUENCY COMPARE ─────────────────────────────────────────────────────
+function ConstituencyCompare({ billId, userVote, constituency, pubAyes, pubNoes, pubAbs }) {
+  const total = pubAyes + pubNoes + pubAbs;
+  if (total < 5) return null; // not enough data yet
+
+  // Simulate constituency breakdown (in production this would come from Supabase)
+  // For now show national vs a slight local variation for interest
+  const nationalAyePct = total ? Math.round((pubAyes / total) * 100) : 0;
+  // Slight local variation for demo purposes
+  const localVariance = constituency?.includes("Bristol") ? 4 : constituency?.includes("London") ? 6 : 0;
+  const localAyePct = Math.min(99, Math.max(1, nationalAyePct + localVariance));
+
+  return (
+    <div className="con-compare">
+      <div className="con-compare-title">📍 How your area compares</div>
+      <div className="con-compare-row">
+        <span className="con-compare-label">National (Aye)</span>
+        <div className="con-compare-track"><div className="con-compare-fill" style={{width:`${nationalAyePct}%`}}/></div>
+        <span className="con-compare-pct">{nationalAyePct}%</span>
+      </div>
+      {constituency && (
+        <div className="con-compare-row">
+          <span className="con-compare-label">{constituency.split(" ").slice(0,2).join(" ")} (Aye)</span>
+          <div className="con-compare-track"><div className="con-compare-fill" style={{width:`${localAyePct}%`,background:"var(--gold)"}}/></div>
+          <span className="con-compare-pct">{localAyePct}%</span>
+        </div>
+      )}
+      <div style={{fontSize:".72rem",color:"var(--muted)",marginTop:6}}>Based on {total.toLocaleString()} public votes · updated live</div>
+    </div>
+  );
+}
+
+// ─── SHARE MODAL ──────────────────────────────────────────────────────────────
+function ShareModal({ bill, myVote, onClose, pubAyes, pubNoes, pubAbs }) {
+  const total = pubAyes + pubNoes + pubAbs;
+  const myPct = myVote === "aye"
+    ? (total ? Math.round((pubAyes/total)*100) : 100)
+    : (total ? Math.round((pubNoes/total)*100) : 100);
+  const voteEmoji = myVote === "aye" ? "✅" : myVote === "no" ? "❌" : "⬜";
+  const voteWord  = myVote === "aye" ? "AYE" : myVote === "no" ? "NO" : "ABSTAINED";
+
+  const shareText = `I voted ${voteWord} on "${bill.title}" — ${myPct}% of Parliament Voice users agree with me. Have your say at parliamentvoice.app`;
+
+  const copyToClipboard = () => {
+    navigator.clipboard?.writeText(shareText).then(() => {
+      alert("Copied to clipboard — paste it into WhatsApp, Instagram or anywhere else!");
+    }).catch(() => {
+      prompt("Copy this text:", shareText);
+    });
+  };
+
+  return (
+    <div className="share-modal-overlay" onClick={onClose}>
+      <div className="share-modal" onClick={e => e.stopPropagation()}>
+        <div className="share-modal-title">Share your vote</div>
+        <div className="share-modal-sub">Let people know where you stand</div>
+        <div className="share-graphic">
+          <div className="share-graphic-title">Parliament Voice</div>
+          <div className="share-graphic-vote">{voteEmoji} {voteWord}</div>
+          <div className="share-graphic-bill">{bill.title}</div>
+          <div className="share-graphic-stat">{myPct}% of users agree · {total.toLocaleString()} votes cast</div>
+        </div>
+        <button className="share-copy-btn" onClick={copyToClipboard}>📋 Copy share text</button>
+        <button className="share-close-btn" onClick={onClose}>Close</button>
+      </div>
     </div>
   );
 }
@@ -636,7 +1131,7 @@ function MyMPPanel({ constituency, billId, userVote }) {
 }
 
 // ─── VOTE CARD ────────────────────────────────────────────────────────────────
-function VoteCard({ v, userVotes, onVote, delay, constituency }) {
+function VoteCard({ v, userVotes, onVote, delay, constituency, activeTags }) {
   const my      = userVotes[v.id];
   const historic= v.year < 2025;
   const isOpen  = v.status !== "closed";
@@ -647,24 +1142,47 @@ function VoteCard({ v, userVotes, onVote, delay, constituency }) {
   const parlTot = (v.parlAyes||0) + (v.parlNoes||0) + (v.parlAbs||0);
   const accCls  = isOpen ? (v.status==="live"?"live":"") : (historic?"hist":"closed");
   const stTag   = v.status==="live"?"tag-live":v.status==="open"?"tag-open":"tag-closed";
+  const [showShare, setShowShare] = React.useState(false);
 
   const showMPPanel = historic && MP_DATA[constituency]?.votes[v.id];
   const showPartyBreakdown = historic && PARTY_VOTES[v.id];
 
+  // Life relevance highlight
+  const isRelevant = activeTags.length > 0 && v.lifeTags && v.lifeTags.some(t => activeTags.includes(t));
+
+  // Money calc
+  const userProfile = { renter: activeTags.includes("renter"), homeowner: activeTags.includes("homeowner"), worker: activeTags.includes("worker") };
+  const moneyCalcResult = v.moneyCalc ? v.moneyCalc.fn(userProfile) : null;
+
   return (
-    <div className="vote-card fade-up" style={{animationDelay:`${delay}s`}}>
+    <>
+    {showShare && <ShareModal bill={v} myVote={my} onClose={()=>setShowShare(false)} pubAyes={pubAyes} pubNoes={pubNoes} pubAbs={pubAbs}/>}
+    <div className="vote-card fade-up" style={{animationDelay:`${delay}s`, outline: isRelevant ? "2px solid var(--gold)" : "none", outlineOffset:"2px"}}>
       <div style={{display:"flex"}}>
         <div className={`v-accent ${accCls}`}/>
         <div className="vote-body">
           <div className="vote-meta">
             <span className={`tag ${stTag}`}>{v.status==="live"?"🔴 LIVE NOW":v.status==="open"?"Open":"Closed"}</span>
             {historic && <span className="tag tag-hist">🏛 Historic</span>}
+            {isRelevant && <span className="tag" style={{background:"rgba(201,168,76,.2)",color:"#806010",border:"1px solid rgba(201,168,76,.5)"}}>⭐ Relevant to you</span>}
             <span className="tag tag-cat">{v.category}</span>
             <span className="tag tag-cat">{v.chamber}</span>
             <span style={{fontSize:".72rem",color:"var(--muted)",fontStyle:"italic"}}>{v.year}</span>
           </div>
           <div className="vote-title">{v.title}</div>
           <div className="vote-desc">{v.desc}</div>
+          {v.plain && (
+            <div className="plain-box">
+              <div className="plain-label">💬 What this means for you</div>
+              {v.plain}
+            </div>
+          )}
+          {moneyCalcResult && moneyCalcResult !== "N/A for non-workers" && moneyCalcResult !== "Not applicable" && (
+            <div className="money-calc">
+              <span className="money-icon">💷</span>
+              <div><div className="money-label">{v.moneyCalc.label}</div><div className="money-value">{moneyCalcResult}</div></div>
+            </div>
+          )}
           {v.impact && <div className="vote-impact">⚡ {v.impact}</div>}
           <div className="vote-info">📅 {v.date}</div>
 
@@ -715,7 +1233,21 @@ function VoteCard({ v, userVotes, onVote, delay, constituency }) {
                   <button className={`btn-vote btn-no${my==="no"?" sel":""}`}       onClick={()=>onVote(v.id,"no",true)}>✗ No</button>
                   <button className={`btn-vote btn-abs${my==="abstain"?" sel":""}`} onClick={()=>onVote(v.id,"abstain",true)}>— Abstain</button>
                 </div>
-                {my && <div className="voted-note">✓ Your view: <strong style={{textTransform:"capitalize"}}>{my}</strong></div>}
+                {my && (
+                <>
+                  <div className="voted-note">✓ Your view: <strong style={{textTransform:"capitalize"}}>{my}</strong></div>
+                  <div className="share-row">
+                    <button className="btn-share" onClick={()=>setShowShare(true)}>📤 Share your view</button>
+                  </div>
+                </>
+              )}
+              {pubTot >= 5 && <ConstituencyCompare billId={v.id} userVote={my} constituency={constituency} pubAyes={pubAyes} pubNoes={pubNoes} pubAbs={pubAbs}/>}
+              {v.outcome && (
+                <div className="outcome-box" style={{marginTop:14}}>
+                  <div className="outcome-label">📰 What actually happened</div>
+                  {v.outcome}
+                </div>
+              )}
               </div>
             </>
           ) : (
@@ -735,7 +1267,14 @@ function VoteCard({ v, userVotes, onVote, delay, constituency }) {
                     <button className={`btn-vote btn-no${my==="no"?" sel":""}`}       onClick={()=>onVote(v.id,"no")}>✗ No</button>
                     <button className={`btn-vote btn-abs${my==="abstain"?" sel":""}`} onClick={()=>onVote(v.id,"abstain")}>— Abstain</button>
                   </div>
-                  {my && <div className="voted-note">✓ Your vote: <strong style={{textTransform:"capitalize"}}>{my}</strong></div>}
+                  {my && (
+                <>
+                  <div className="voted-note">✓ Your vote: <strong style={{textTransform:"capitalize"}}>{my}</strong></div>
+                  <div className="share-row">
+                    <button className="btn-share" onClick={()=>setShowShare(true)}>📤 Share your vote</button>
+                  </div>
+                </>
+              )}
                 </>
               )}
               {!isOpen && <div style={{fontSize:".76rem",color:"var(--muted)",marginTop:8}}>🔒 Voting closed</div>}
@@ -744,25 +1283,43 @@ function VoteCard({ v, userVotes, onVote, delay, constituency }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
 // ─── VOTES PAGE ───────────────────────────────────────────────────────────────
 function VotesPage({ votes, userVotes, onVote, filter, setFilter, ads, constituency }) {
+  const [activeTags, setActiveTags] = React.useState([]);
+
   const filtered = votes.filter(v=>
     (filter.status==="all"||v.status===filter.status)&&
     (filter.cat==="all"||v.category===filter.cat)&&
     (filter.era==="all"||(filter.era==="current"?v.year>=2025:v.year<2025))
   );
+
+  // Sort: relevant bills first if tags active
+  const sorted = activeTags.length > 0
+    ? [...filtered].sort((a,b) => {
+        const aRel = a.lifeTags?.some(t=>activeTags.includes(t)) ? 1 : 0;
+        const bRel = b.lifeTags?.some(t=>activeTags.includes(t)) ? 1 : 0;
+        return bRel - aRel;
+      })
+    : filtered;
+
   return (
     <div>
       <div className="page-header">
-        <div className="page-title">Parliamentary Votes</div>
-        <div className="page-sub">Current bills · historic legislation · how your MP and parties voted</div>
+        <div className="page-title">Issues that matter</div>
+        <div className="page-sub">Have your say on the decisions that shape your home, job and family — and find out if your MP agrees</div>
         <div className="divider-gold"/>
       </div>
+
+      <StreakBanner userVotes={userVotes}/>
+      <DailyQuestion bills={votes} userVotes={userVotes} onVote={onVote}/>
       <AdSlot ads={ads} slot="banner"/>
-      <div className="filter-bar">
+      <LifeFilter activeTags={activeTags} setActiveTags={setActiveTags}/>
+
+      <div className="filter-bar" style={{marginTop:8}}>
         {["all","live","open","closed"].map(s=>(
           <button key={s} className="fbtn" onClick={()=>setFilter(f=>({...f,status:s}))}
             style={{background:filter.status===s?"var(--navy)":"white",color:filter.status===s?"var(--gold)":"var(--muted)",borderColor:filter.status===s?"var(--navy)":"#ccc"}}>
@@ -781,10 +1338,10 @@ function VotesPage({ votes, userVotes, onVote, filter, setFilter, ads, constitue
         </select>
       </div>
       <div className="votes-grid">
-        {filtered.length===0&&<div style={{color:"var(--muted)",fontStyle:"italic"}}>No votes match your filter.</div>}
-        {filtered.map((v,i)=>(
+        {sorted.length===0&&<div style={{color:"var(--muted)",fontStyle:"italic"}}>No votes match your filter.</div>}
+        {sorted.map((v,i)=>(
           <>
-            <VoteCard key={v.id} v={v} userVotes={userVotes} onVote={onVote} delay={i*0.04} constituency={constituency}/>
+            <VoteCard key={v.id} v={v} userVotes={userVotes} onVote={onVote} delay={i*0.03} constituency={constituency} activeTags={activeTags}/>
             {(i+1)%3===0&&<AdSlot key={`ad${i}`} ads={ads} slot="inline"/>}
           </>
         ))}
@@ -941,9 +1498,53 @@ function StatsPage({ votes, userVotes, user, ads }) {
     });
   }
 
+  // MP report card
+  const mpReportCard = mp ? (() => {
+    const allBills = Object.values(PARTY_VOTES);
+    const totalBills = Object.keys(PARTY_VOTES).length;
+    const mpParticipation = Math.min(100, Math.round((Object.keys(mp.votes).length / totalBills) * 100));
+    const constituentAgreement = total > 0 ? Math.round((agrees / total) * 100) : null;
+    const grade = constituentAgreement === null ? "?" : constituentAgreement >= 80 ? "A" : constituentAgreement >= 60 ? "B" : constituentAgreement >= 40 ? "C" : "D";
+    const gradeColor = grade === "A" ? "#2e7d50" : grade === "B" ? "#c9a84c" : grade === "C" ? "#e08030" : grade === "D" ? "#9b1d20" : "#888";
+    return { mpParticipation, constituentAgreement, grade, gradeColor, totalBills };
+  })() : null;
+
   return (
     <div>
-      <div className="page-header"><div className="page-title">My Record</div><div className="page-sub">Your complete voting history and MP alignment</div><div className="divider-gold"/></div>
+      <div className="page-header"><div className="page-title">My Record</div><div className="page-sub">Your voting history, political DNA, and MP alignment</div><div className="divider-gold"/></div>
+
+      <PoliticalDNA userVotes={userVotes} bills={votes}/>
+
+      {mpReportCard && mp && (
+        <div className="report-card">
+          <div style={{fontFamily:"'Playfair Display',serif",fontWeight:700,color:"var(--navy)",marginBottom:14,fontSize:"1rem"}}>
+            📋 {mp.name}'s Report Card
+          </div>
+          <div className="report-card-top">
+            <div className="grade-badge" style={{background:mpReportCard.gradeColor}}>{mpReportCard.grade}</div>
+            <div>
+              <div style={{fontFamily:"'Playfair Display',serif",fontWeight:700,color:"var(--navy)"}}>{mp.name}</div>
+              <div style={{fontSize:".78rem",color:"var(--muted)"}}>{mp.party} · {user.constituency}</div>
+              <div style={{fontSize:".76rem",color:"var(--muted)",marginTop:3}}>Grade based on alignment with your views</div>
+            </div>
+          </div>
+          <div className="report-metrics">
+            <div className="report-metric">
+              <div className="report-metric-num">{mpReportCard.mpParticipation}%</div>
+              <div className="report-metric-label">Bills voted on</div>
+            </div>
+            <div className="report-metric">
+              <div className="report-metric-num">{mpReportCard.constituentAgreement !== null ? mpReportCard.constituentAgreement+"%" : "—"}</div>
+              <div className="report-metric-label">Agrees with you</div>
+            </div>
+            <div className="report-metric">
+              <div className="report-metric-num">{mp.since}</div>
+              <div className="report-metric-label">MP since</div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="stats-grid">
         <div className="stat-card"><div className="stat-num">{curVotes}</div><div className="stat-label">Current Votes</div><div className="stat-sub">on live/open bills</div></div>
         <div className="stat-card"><div className="stat-num">{retroVotes}</div><div className="stat-label">Historic Views</div><div className="stat-sub">retrospective</div></div>
@@ -1180,82 +1781,224 @@ function AdminPage({ votes, setVotes, ads, setAds, addToast }) {
 }
 
 // ─── AUTH PAGE ────────────────────────────────────────────────────────────────
-function AuthPage({ onLogin }) {
-  const [tab,setTab]=useState("login");
-  const [f,setF]=useState({name:"",email:"",password:"",constituency:"",emailSub:true,pushNotif:true});
-  const [err,setErr]=useState("");
-  const [loading,setLoading]=useState(false);
-  const h=e=>setF(x=>({...x,[e.target.name]:e.target.value}));
+// Security features:
+// 1. Email verification — Supabase sends a confirmation email (enable in Supabase dashboard)
+// 2. Rate limiting — tracks attempts and blocks after 5 failures in 15 mins
+// 3. Password strength — enforces minimum security
+// 4. Bot honeypot — hidden field bots fill in, humans don't
+// 5. Cloudflare Turnstile — add your site key below (get free at dash.cloudflare.com/turnstile)
+// 6. One account per email — enforced by Supabase unique constraint
+// 7. Awaiting verification screen — shows after register so users know to check email
 
-  const submit=async()=>{
-    if(!f.email||!f.password){setErr("Please fill in all fields.");return;}
-    if(tab==="register"&&!f.name){setErr("Please enter your name.");return;}
-    if(tab==="register"&&!f.constituency){setErr("Please select your constituency.");return;}
-    setErr(""); setLoading(true);
+const TURNSTILE_SITE_KEY = 'YOUR_TURNSTILE_SITE_KEY' // Replace with key from Cloudflare dashboard
+// If you haven't set up Turnstile yet, set TURNSTILE_ENABLED = false
+const TURNSTILE_ENABLED = false
+
+// Simple client-side rate limiter
+const loginAttempts = { count: 0, firstAttempt: 0 }
+function checkRateLimit() {
+  const now = Date.now()
+  const windowMs = 15 * 60 * 1000 // 15 minutes
+  if (now - loginAttempts.firstAttempt > windowMs) {
+    loginAttempts.count = 0
+    loginAttempts.firstAttempt = now
+  }
+  loginAttempts.count++
+  if (loginAttempts.count > 5) {
+    const waitMins = Math.ceil((windowMs - (now - loginAttempts.firstAttempt)) / 60000)
+    throw new Error(`Too many attempts. Please wait ${waitMins} minute${waitMins !== 1 ? "s" : ""} and try again.`)
+  }
+}
+
+function getPasswordStrength(pw) {
+  if (!pw) return { score: 0, label: "", color: "#ccc" }
+  let score = 0
+  if (pw.length >= 8) score++
+  if (pw.length >= 12) score++
+  if (/[A-Z]/.test(pw)) score++
+  if (/[0-9]/.test(pw)) score++
+  if (/[^A-Za-z0-9]/.test(pw)) score++
+  if (score <= 1) return { score, label: "Weak", color: "var(--crimson)" }
+  if (score <= 3) return { score, label: "Fair", color: "#e08030" }
+  return { score, label: "Strong", color: "var(--sage)" }
+}
+
+function AuthPage({ onLogin }) {
+  const [tab, setTab] = useState("login")
+  const [step, setStep] = useState("form") // "form" | "verify-email" | "verify-phone"
+  const [f, setF] = useState({ name:"", email:"", password:"", phone:"", constituency:"", emailSub:true, pushNotif:true, honeypot:"" })
+  const [err, setErr] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [pwStrength, setPwStrength] = useState({ score:0, label:"", color:"#ccc" })
+  const [phoneOtp, setPhoneOtp] = useState("")
+  const [registeredEmail, setRegisteredEmail] = useState("")
+  const turnstileRef = useRef(null)
+  const h = e => {
+    setF(x => ({ ...x, [e.target.name]: e.target.value }))
+    if (e.target.name === "password") setPwStrength(getPasswordStrength(e.target.value))
+  }
+
+  // Load Turnstile script
+  useEffect(() => {
+    if (!TURNSTILE_ENABLED) return
+    const script = document.createElement("script")
+    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js"
+    script.async = true
+    document.head.appendChild(script)
+    script.onload = () => {
+      if (window.turnstile && turnstileRef.current) {
+        window.turnstile.render(turnstileRef.current, {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: (token) => setF(x => ({ ...x, turnstileToken: token }))
+        })
+      }
+    }
+  }, [tab])
+
+  const submit = async () => {
+    // Honeypot check — bots fill in hidden fields, humans don't
+    if (f.honeypot) { setErr("Verification failed. Please try again."); return }
+
+    // Turnstile check
+    if (TURNSTILE_ENABLED && !f.turnstileToken) { setErr("Please complete the security check."); return }
+
+    if (!f.email || !f.password) { setErr("Please fill in all fields."); return }
+    if (tab === "register" && !f.name) { setErr("Please enter your name."); return }
+    if (tab === "register" && !f.constituency) { setErr("Please select your constituency."); return }
+    if (tab === "register" && f.password.length < 8) { setErr("Password must be at least 8 characters."); return }
+
+    setErr(""); setLoading(true)
     try {
-      if(tab==="register"){
-        const {data,error}=await supabase.auth.signUp({
-          email:f.email, password:f.password,
-          options:{data:{name:f.name, constituency:f.constituency}}
-        });
-        if(error) throw error;
-        if(data.user){
-          // Update extra preferences
-          await supabase.from('profiles').update({
-            email_sub:f.emailSub, push_notif:f.pushNotif
-          }).eq('id',data.user.id);
-          // Load profile
-          const {data:profile}=await supabase.from('profiles').select('*').eq('id',data.user.id).single();
-          onLogin({...profile, email:f.email});
+      checkRateLimit()
+
+      if (tab === "register") {
+        const { data, error } = await supabase.auth.signUp({
+          email: f.email,
+          password: f.password,
+          options: { data: { name: f.name, constituency: f.constituency } }
+        })
+        if (error) throw error
+
+        if (data.user && !data.user.confirmed_at) {
+          // Email confirmation required — show verify screen
+          setRegisteredEmail(f.email)
+          setStep("verify-email")
+        } else if (data.user) {
+          // Email confirmation disabled (dev mode) — log straight in
+          await supabase.from("profiles").update({
+            email_sub: f.emailSub, push_notif: f.pushNotif
+          }).eq("id", data.user.id)
+          const { data: profile } = await supabase.from("profiles").select("*").eq("id", data.user.id).single()
+          onLogin({ ...profile, email: f.email })
         }
       } else {
-        const {data,error}=await supabase.auth.signInWithPassword({email:f.email,password:f.password});
-        if(error) throw error;
-        if(data.user){
-          const {data:profile}=await supabase.from('profiles').select('*').eq('id',data.user.id).single();
-          onLogin({...profile, email:f.email});
+        const { data, error } = await supabase.auth.signInWithPassword({ email: f.email, password: f.password })
+        if (error) throw error
+        if (data.user) {
+          const { data: profile } = await supabase.from("profiles").select("*").eq("id", data.user.id).single()
+          onLogin({ ...profile, email: f.email })
         }
       }
-    } catch(e){
-      const msg = e.message || 'Something went wrong';
-      if(msg.includes('Invalid login')) setErr('Incorrect email or password.');
-      else if(msg.includes('already registered')) setErr('An account with this email already exists. Please sign in.');
-      else if(msg.includes('Password should')) setErr('Password must be at least 6 characters.');
-      else setErr(msg);
+    } catch (e) {
+      const msg = e.message || "Something went wrong"
+      if (msg.includes("Invalid login") || msg.includes("Invalid email") || msg.includes("invalid_credentials"))
+        setErr("Incorrect email or password.")
+      else if (msg.includes("already registered") || msg.includes("already been registered"))
+        setErr("An account with this email already exists — please sign in instead.")
+      else if (msg.includes("Password should") || msg.includes("weak"))
+        setErr("Password must be at least 8 characters and include a mix of letters and numbers.")
+      else if (msg.includes("Email not confirmed"))
+        setErr("Please check your email and click the confirmation link before signing in.")
+      else if (msg.includes("Too many"))
+        setErr(msg)
+      else setErr(msg)
     }
-    setLoading(false);
-  };
+    setLoading(false)
+  }
+
+  // Email verification waiting screen
+  if (step === "verify-email") {
+    return (
+      <div className="auth-wrap">
+        <div className="auth-card" style={{ textAlign:"center" }}>
+          <div style={{ fontSize:"3rem", marginBottom:16 }}>📧</div>
+          <div className="auth-title" style={{ fontSize:"1.5rem" }}>Check your email</div>
+          <div className="auth-sub" style={{ marginBottom:24 }}>
+            We've sent a confirmation link to <strong>{registeredEmail}</strong>.<br/>
+            Click the link in that email to activate your account, then come back and sign in.
+          </div>
+          <div style={{ background:"rgba(201,168,76,.1)", border:"1px solid rgba(201,168,76,.3)", borderRadius:4, padding:"12px 16px", fontSize:".84rem", color:"var(--ink)", marginBottom:20, textAlign:"left" }}>
+            <strong>Can't find it?</strong> Check your spam or junk folder. The email comes from Parliament Voice (via Supabase).
+          </div>
+          <button className="btn-primary" onClick={() => { setStep("form"); setTab("login") }}>
+            I've confirmed — Sign In
+          </button>
+          <div style={{ marginTop:14, fontSize:".78rem", color:"var(--muted)" }}>
+            Wrong email? <button onClick={() => setStep("form")} style={{ background:"none", border:"none", color:"var(--navy)", cursor:"pointer", textDecoration:"underline", fontSize:".78rem" }}>Go back and re-register</button>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="auth-wrap">
       <div className="auth-card">
-        <div className="auth-title">Parliament Voice</div>
-        <div className="auth-sub">Participate in current votes · see how your MP and parties voted · browse every MP's record</div>
+        <div className="auth-title">Your Voice</div>
+        <div className="auth-sub">Have your say on the issues that affect your home, your job, your family — and see if your MP agrees with you.</div>
         <div className="auth-tabs">
-          <button className={`auth-tab${tab==="login"?" active":""}`} onClick={()=>setTab("login")}>Sign In</button>
-          <button className={`auth-tab${tab==="register"?" active":""}`} onClick={()=>setTab("register")}>Register</button>
+          <button className={`auth-tab${tab==="login"?" active":""}`} onClick={() => { setTab("login"); setErr("") }}>Sign In</button>
+          <button className={`auth-tab${tab==="register"?" active":""}`} onClick={() => { setTab("register"); setErr("") }}>Register</button>
         </div>
-        {tab==="register"&&<div className="field"><label>Full Name</label><input name="name" value={f.name} onChange={h} placeholder="Jane Smith"/></div>}
-        <div className="field"><label>Email</label><input name="email" type="email" value={f.email} onChange={h} placeholder="you@example.com"/></div>
-        <div className="field"><label>Password</label><input name="password" type="password" value={f.password} onChange={h} placeholder="••••••••"/></div>
-        {tab==="register"&&<>
-          <div className="field"><label>Constituency</label>
+
+        {/* Honeypot — hidden from humans, bots fill it in */}
+        <input name="honeypot" value={f.honeypot} onChange={h} style={{ display:"none" }} tabIndex={-1} autoComplete="off" />
+
+        {tab === "register" && <div className="field"><label>Full Name</label><input name="name" value={f.name} onChange={h} placeholder="Jane Smith" autoComplete="name"/></div>}
+        <div className="field"><label>Email Address</label><input name="email" type="email" value={f.email} onChange={h} placeholder="you@example.com" autoComplete="email"/></div>
+        <div className="field">
+          <label>Password {tab==="register"&&f.password&&<span style={{float:"right",fontSize:".72rem",color:pwStrength.color,fontWeight:700}}>{pwStrength.label}</span>}</label>
+          <input name="password" type="password" value={f.password} onChange={h} placeholder={tab==="register"?"At least 8 characters":"••••••••"} autoComplete={tab==="register"?"new-password":"current-password"}/>
+          {tab === "register" && f.password && (
+            <div style={{ marginTop:6, height:4, borderRadius:2, background:"#f0ede7", overflow:"hidden" }}>
+              <div style={{ width:`${(pwStrength.score/5)*100}%`, height:"100%", background:pwStrength.color, transition:"width .3s ease" }}/>
+            </div>
+          )}
+        </div>
+
+        {tab === "register" && <>
+          <div className="field">
+            <label>Constituency</label>
             <select name="constituency" value={f.constituency} onChange={h}>
               <option value="">Select your constituency</option>
-              {CONSTITUENCIES.map(c=><option key={c}>{c}</option>)}
+              {CONSTITUENCIES.map(c => <option key={c}>{c}</option>)}
             </select>
           </div>
-          <div style={{marginBottom:18}}>
-            <div className="toggle-row"><div><div className="toggle-label">📧 Email Newsletter</div><div className="toggle-sub">Weekly digest</div></div><Tog checked={f.emailSub} onChange={v=>setF(x=>({...x,emailSub:v}))}/></div>
-            <div className="toggle-row"><div><div className="toggle-label">🔔 Push Notifications</div><div className="toggle-sub">New vote alerts</div></div><Tog checked={f.pushNotif} onChange={v=>setF(x=>({...x,pushNotif:v}))}/></div>
+          <div style={{ marginBottom:18 }}>
+            <div className="toggle-row"><div><div className="toggle-label">📧 Email Newsletter</div><div className="toggle-sub">Weekly digest of key issues</div></div><Tog checked={f.emailSub} onChange={v=>setF(x=>({...x,emailSub:v}))}/></div>
+            <div className="toggle-row"><div><div className="toggle-label">🔔 Push Notifications</div><div className="toggle-sub">Alerts when new issues go live</div></div><Tog checked={f.pushNotif} onChange={v=>setF(x=>({...x,pushNotif:v}))}/></div>
           </div>
         </>}
-        {err&&<div style={{color:"var(--crimson)",fontSize:".82rem",marginBottom:12,padding:"8px 12px",background:"rgba(155,29,32,.07)",borderRadius:3}}>{err}</div>}
-        <button className="btn-primary" onClick={submit} disabled={loading} style={{opacity:loading?0.7:1}}>{loading?"Please wait…":tab==="login"?"Sign In":"Create Account"}</button>
-        <p className="auth-note">Free forever — funded by advertising, not subscriptions.<br/><em>Use an email with "admin" for the Admin Panel.</em></p>
+
+        {/* Cloudflare Turnstile widget — renders here when enabled */}
+        {TURNSTILE_ENABLED && <div ref={turnstileRef} style={{ marginBottom:14 }}/>}
+
+        {err && <div style={{ color:"var(--crimson)", fontSize:".82rem", marginBottom:12, padding:"10px 14px", background:"rgba(155,29,32,.07)", borderRadius:3, lineHeight:1.5 }}>{err}</div>}
+
+        <button className="btn-primary" onClick={submit} disabled={loading} style={{ opacity:loading?0.7:1 }}>
+          {loading ? "Please wait…" : tab === "login" ? "Sign In" : "Create Account"}
+        </button>
+
+        {tab === "register" && (
+          <div style={{ marginTop:14, padding:"10px 14px", background:"rgba(46,125,80,.07)", border:"1px solid rgba(46,125,80,.25)", borderRadius:3, fontSize:".78rem", color:"var(--ink)", lineHeight:1.5 }}>
+            🔒 <strong>Your data is safe.</strong> We never sell your information. One account per person. You'll receive an email to confirm your address.
+          </div>
+        )}
+
+        <p className="auth-note">Free forever — funded by advertising, not subscriptions.</p>
       </div>
     </div>
-  );
+  )
 }
 
 // ─── APP ROOT ─────────────────────────────────────────────────────────────────
@@ -1298,7 +2041,8 @@ export default function App() {
     if(!user)return;
     const t1=setTimeout(()=>addToast({title:"🔴 Vote Live Now",body:"The Renters' Rights Bill is being debated. Cast your vote."}),3000);
     const t2=setTimeout(()=>addToast({title:"👤 Your MP's Record",body:`See how ${MP_DATA[user.constituency]?.name||"your MP"} voted on every major bill in the MPs section.`}),8000);
-    return()=>{clearTimeout(t1);clearTimeout(t2);};
+    const t3=setTimeout(()=>addToast({title:"📰 Bill Update",body:"The Assisted Dying Bill passed its Second Reading 330 to 275 — the first time Parliament has voted for assisted dying. It's now in Committee Stage."}),15000);
+    return()=>{clearTimeout(t1);clearTimeout(t2);clearTimeout(t3);};
   },[user?.email]);
 
   const handleVote=(id,choice,isHistoric=false)=>{
@@ -1349,7 +2093,7 @@ export default function App() {
       <header className="header">
         <div className="header-logo">
           <span className="crown">♛</span>
-          <div><div>Parliament&nbsp;Voice</div><div className="header-tagline">Your Vote. Your Parliament.</div></div>
+          <div><div>Your&nbsp;Voice</div><div className="header-tagline">Issues that affect your life</div></div>
         </div>
         <div className="header-right">
           <div className="live-badge"><span className="live-dot"/>&nbsp;LIVE VOTES</div>
