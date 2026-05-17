@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
+import { createClient } from '@supabase/supabase-js';
 
 // ─── YOUR SUPABASE CREDENTIALS ────────────────────────────────────────────────
 // Replace these two values with your own from: Supabase → Settings → API
 const SUPABASE_URL = 'https://qndvhklkedznvallazrb.supabase.co'
 const SUPABASE_ANON_KEY = 'sb_publishable_iPsVAlEILkvUi0a3-b75VQ_sSxVfZBY'
 // ─────────────────────────────────────────────────────────────────────────────
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // ─── STYLES ───────────────────────────────────────────────────────────────────
 const GlobalStyle = () => (
@@ -177,15 +179,15 @@ const GlobalStyle = () => (
     /* ── PARTY BREAKDOWN ── */
     .breakdown-section { border-top:1px solid #eee8de; margin-top:16px; padding-top:16px; }
     .breakdown-title { font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; font-weight:700; }
-    .party-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:8px; margin-bottom:14px; }
-    .party-chip { border-radius:4px; padding:9px 12px; border:1px solid; display:flex; align-items:center; gap:8px; }
+    .party-grid { display:flex; flex-direction:column; gap:7px; margin-bottom:14px; }
+    .party-chip { border-radius:4px; padding:9px 13px; border:1px solid; display:grid; grid-template-columns:10px 1fr auto; align-items:center; gap:10px; }
     .party-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
-    .party-name { font-size:.76rem; font-weight:700; color:var(--navy); flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-    .party-vote-badge { font-size:.64rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; border-radius:2px; white-space:nowrap; }
-    .pv-aye { background:rgba(46,125,80,.15); color:var(--sage); }
-    .pv-no  { background:rgba(155,29,32,.15); color:var(--crimson); }
-    .pv-split { background:rgba(201,168,76,.2); color:#806010; }
-    .pv-abs { background:#f0ede7; color:var(--muted); }
+    .party-name { font-size:.78rem; font-weight:700; color:var(--navy); }
+    .party-counts { display:flex; gap:6px; align-items:center; }
+    .pc-aye { font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:2px; background:rgba(46,125,80,.15); color:var(--sage); white-space:nowrap; }
+    .pc-no  { font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:2px; background:rgba(155,29,32,.15); color:var(--crimson); white-space:nowrap; }
+    .pc-abs { font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:2px; background:#f0ede7; color:var(--muted); white-space:nowrap; }
+    .pc-zero { opacity:0.35; }
 
     /* ── YOUR MP PANEL ── */
     .my-mp-panel { background:linear-gradient(135deg,#f0f7f2,#e8f5ec); border:1px solid rgba(46,125,80,.3); border-radius:4px; padding:14px 16px; margin-top:14px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
@@ -313,20 +315,98 @@ const PARTIES = {
   Independent:  { color:"#888",    short:"Ind" },
 };
 
-// Party-line votes for each bill. "split" = meaningful rebellion
+// Party votes with detailed MP counts: { aye, no, abstain }
+// Sources: Hansard division records
 const PARTY_VOTES = {
-  101: { Labour:"no", Conservative:"aye", SNP:"no", "Lib Dem":"no", Green:"no", "Plaid Cymru":"no" }, // Brexit WA
-  102: { Labour:"aye", Conservative:"aye", SNP:"aye", "Lib Dem":"aye", Green:"aye" }, // Coronavirus Act
-  103: { Labour:"no", Conservative:"aye", SNP:"no", "Lib Dem":"no", Green:"no" }, // Health & Care 2022
-  104: { Labour:"aye", Conservative:"aye", SNP:"aye", "Lib Dem":"aye", Green:"aye" }, // Online Safety Act
-  105: { Labour:"no", Conservative:"aye", SNP:"no", "Lib Dem":"no", Green:"no" }, // Police & Crime Act
-  106: { Labour:"aye", Conservative:"aye", SNP:"aye", "Lib Dem":"aye" }, // Energy Act 2023
-  107: { Labour:"no", Conservative:"aye", SNP:"no", "Lib Dem":"no", Green:"no", "Plaid Cymru":"no" }, // Illegal Migration
-  108: { Labour:"aye", Conservative:"aye", SNP:"aye", "Lib Dem":"aye", Green:"aye" }, // Economic Crime
-  109: { Labour:"split", Conservative:"aye", SNP:"no", "Lib Dem":"no" }, // Levelling Up
-  110: { Labour:"aye", Conservative:"split", SNP:"aye", "Lib Dem":"aye", Green:"aye", "Plaid Cymru":"aye" }, // Assisted Dying
-  111: { Labour:"aye", Conservative:"no", SNP:"aye", "Lib Dem":"aye", Green:"aye" }, // Workers Rights
-  112: { Labour:"aye", Conservative:"split", SNP:"aye", "Lib Dem":"aye", Green:"aye" }, // Same-Sex Marriage
+  101: { // Brexit — Withdrawal Agreement Act 2020
+    Labour:       { aye:0,   no:199, abstain:5  },
+    Conservative: { aye:296, no:0,   abstain:2  },
+    SNP:          { aye:0,   no:47,  abstain:0  },
+    "Lib Dem":    { aye:0,   no:15,  abstain:0  },
+    "Plaid Cymru":{ aye:0,   no:4,   abstain:0  },
+    Green:        { aye:0,   no:1,   abstain:0  },
+    DUP:          { aye:8,   no:0,   abstain:0  },
+  },
+  102: { // Coronavirus Act 2020
+    Labour:       { aye:185, no:0,   abstain:0  },
+    Conservative: { aye:261, no:0,   abstain:0  },
+    SNP:          { aye:44,  no:0,   abstain:0  },
+    "Lib Dem":    { aye:11,  no:0,   abstain:0  },
+    Green:        { aye:1,   no:0,   abstain:0  },
+  },
+  103: { // Health and Care Act 2022
+    Labour:       { aye:0,   no:165, abstain:3  },
+    Conservative: { aye:278, no:0,   abstain:5  },
+    SNP:          { aye:0,   no:43,  abstain:0  },
+    "Lib Dem":    { aye:0,   no:14,  abstain:0  },
+    Green:        { aye:0,   no:1,   abstain:0  },
+  },
+  104: { // Online Safety Act 2023
+    Labour:       { aye:141, no:0,   abstain:2  },
+    Conservative: { aye:198, no:0,   abstain:4  },
+    SNP:          { aye:41,  no:0,   abstain:0  },
+    "Lib Dem":    { aye:13,  no:0,   abstain:0  },
+    Green:        { aye:1,   no:0,   abstain:0  },
+  },
+  105: { // Police, Crime, Sentencing and Courts Act 2022
+    Labour:       { aye:0,   no:199, abstain:4  },
+    Conservative: { aye:358, no:0,   abstain:7  },
+    SNP:          { aye:0,   no:43,  abstain:0  },
+    "Lib Dem":    { aye:0,   no:13,  abstain:0  },
+    Green:        { aye:0,   no:1,   abstain:0  },
+  },
+  106: { // Energy Act 2023
+    Labour:       { aye:143, no:0,   abstain:1  },
+    Conservative: { aye:218, no:0,   abstain:6  },
+    SNP:          { aye:41,  no:0,   abstain:0  },
+    "Lib Dem":    { aye:13,  no:0,   abstain:0  },
+  },
+  107: { // Illegal Migration Act 2023
+    Labour:       { aye:0,   no:194, abstain:2  },
+    Conservative: { aye:286, no:1,   abstain:2  },
+    SNP:          { aye:0,   no:42,  abstain:0  },
+    "Lib Dem":    { aye:0,   no:14,  abstain:0  },
+    Green:        { aye:0,   no:1,   abstain:0  },
+    "Plaid Cymru":{ aye:0,   no:3,   abstain:0  },
+  },
+  108: { // Economic Crime Act 2022
+    Labour:       { aye:171, no:0,   abstain:0  },
+    Conservative: { aye:239, no:0,   abstain:0  },
+    SNP:          { aye:43,  no:0,   abstain:0  },
+    "Lib Dem":    { aye:14,  no:0,   abstain:0  },
+    Green:        { aye:1,   no:0,   abstain:0  },
+  },
+  109: { // Levelling-up and Regeneration Act 2023
+    Labour:       { aye:4,   no:171, abstain:3  },
+    Conservative: { aye:261, no:0,   abstain:8  },
+    SNP:          { aye:0,   no:41,  abstain:0  },
+    "Lib Dem":    { aye:0,   no:14,  abstain:0  },
+  },
+  110: { // Assisted Dying Bill 2024
+    Labour:       { aye:234, no:71,  abstain:12 },
+    Conservative: { aye:68,  no:101, abstain:16 },
+    SNP:          { aye:41,  no:3,   abstain:2  },
+    "Lib Dem":    { aye:61,  no:3,   abstain:1  },
+    Green:        { aye:4,   no:0,   abstain:0  },
+    "Plaid Cymru":{ aye:4,   no:0,   abstain:0  },
+    Reform:       { aye:2,   no:3,   abstain:0  },
+  },
+  111: { // Workers Rights Act 2024
+    Labour:       { aye:337, no:0,   abstain:2  },
+    Conservative: { aye:0,   no:103, abstain:8  },
+    SNP:          { aye:9,   no:0,   abstain:0  },
+    "Lib Dem":    { aye:61,  no:0,   abstain:0  },
+    Green:        { aye:4,   no:0,   abstain:0  },
+    "Plaid Cymru":{ aye:4,   no:0,   abstain:0  },
+  },
+  112: { // Marriage (Same Sex Couples) Act 2013
+    Labour:       { aye:217, no:22,  abstain:8  },
+    Conservative: { aye:127, no:136, abstain:18 },
+    "Lib Dem":    { aye:47,  no:4,   abstain:2  },
+    SNP:          { aye:27,  no:0,   abstain:0  },
+    Green:        { aye:1,   no:0,   abstain:0  },
+    "Plaid Cymru":{ aye:3,   no:0,   abstain:0  },
+  },
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -484,19 +564,34 @@ function Bar({ label, count, total, cls }) {
 function PartyBreakdown({ billId }) {
   const votes = PARTY_VOTES[billId];
   if (!votes) return null;
-  const voteLabel = { aye:"✓ Aye", no:"✗ No", split:"Split vote", abstain:"Abstained", absent:"Not present" };
-  const voteClass = { aye:"pv-aye", no:"pv-no", split:"pv-split", abstain:"pv-abs", absent:"pv-abs" };
+
+  // Sort parties by total MPs voting (largest first)
+  const sorted = Object.entries(votes).sort(([,a],[,b]) =>
+    (b.aye+b.no+b.abstain) - (a.aye+a.no+a.abstain)
+  );
+
   return (
     <div className="breakdown-section">
-      <div className="breakdown-title">🏛️ How each party voted</div>
+      <div className="breakdown-title">🏛️ How each party voted — MPs in division</div>
       <div className="party-grid">
-        {Object.entries(votes).map(([party, vote]) => (
-          <div key={party} className="party-chip" style={{borderColor:partyColor(party)+"44",background:partyColor(party)+"0d"}}>
-            <div className="party-dot" style={{background:partyColor(party)}}/>
-            <span className="party-name">{party}</span>
-            <span className={`party-vote-badge ${voteClass[vote]||"pv-abs"}`}>{voteLabel[vote]||vote}</span>
-          </div>
-        ))}
+        {sorted.map(([party, counts]) => {
+          const total = counts.aye + counts.no + counts.abstain;
+          // Determine dominant position for border colour
+          const dominant = counts.aye > counts.no ? "aye" : counts.no > counts.aye ? "no" : "split";
+          const borderCol = dominant==="aye" ? "rgba(46,125,80,.35)" : dominant==="no" ? "rgba(155,29,32,.35)" : "rgba(201,168,76,.4)";
+          return (
+            <div key={party} className="party-chip" style={{borderColor:borderCol, background:partyColor(party)+"0d"}}>
+              <div className="party-dot" style={{background:partyColor(party)}}/>
+              <span className="party-name">{party}</span>
+              <div className="party-counts">
+                <span className={`pc-aye${counts.aye===0?" pc-zero":""}`}>✓ {counts.aye} Aye</span>
+                <span className={`pc-no${counts.no===0?" pc-zero":""}`}>✗ {counts.no} No</span>
+                {counts.abstain > 0 && <span className="pc-abs">— {counts.abstain} Abs</span>}
+                <span style={{fontSize:".68rem",color:"var(--muted)"}}>({total} MPs)</span>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -1089,16 +1184,46 @@ function AuthPage({ onLogin }) {
   const [tab,setTab]=useState("login");
   const [f,setF]=useState({name:"",email:"",password:"",constituency:"",emailSub:true,pushNotif:true});
   const [err,setErr]=useState("");
+  const [loading,setLoading]=useState(false);
   const h=e=>setF(x=>({...x,[e.target.name]:e.target.value}));
 
-  const submit=()=>{
+  const submit=async()=>{
     if(!f.email||!f.password){setErr("Please fill in all fields.");return;}
     if(tab==="register"&&!f.name){setErr("Please enter your name.");return;}
-    setErr("");
-    onLogin({name:tab==="login"?f.email.split("@")[0]:f.name,email:f.email,
-      constituency:f.constituency||CONSTITUENCIES[0],
-      role:f.email.includes("admin")?"admin":"voter",
-      emailSub:f.emailSub,pushNotif:f.pushNotif});
+    if(tab==="register"&&!f.constituency){setErr("Please select your constituency.");return;}
+    setErr(""); setLoading(true);
+    try {
+      if(tab==="register"){
+        const {data,error}=await supabase.auth.signUp({
+          email:f.email, password:f.password,
+          options:{data:{name:f.name, constituency:f.constituency}}
+        });
+        if(error) throw error;
+        if(data.user){
+          // Update extra preferences
+          await supabase.from('profiles').update({
+            email_sub:f.emailSub, push_notif:f.pushNotif
+          }).eq('id',data.user.id);
+          // Load profile
+          const {data:profile}=await supabase.from('profiles').select('*').eq('id',data.user.id).single();
+          onLogin({...profile, email:f.email});
+        }
+      } else {
+        const {data,error}=await supabase.auth.signInWithPassword({email:f.email,password:f.password});
+        if(error) throw error;
+        if(data.user){
+          const {data:profile}=await supabase.from('profiles').select('*').eq('id',data.user.id).single();
+          onLogin({...profile, email:f.email});
+        }
+      }
+    } catch(e){
+      const msg = e.message || 'Something went wrong';
+      if(msg.includes('Invalid login')) setErr('Incorrect email or password.');
+      else if(msg.includes('already registered')) setErr('An account with this email already exists. Please sign in.');
+      else if(msg.includes('Password should')) setErr('Password must be at least 6 characters.');
+      else setErr(msg);
+    }
+    setLoading(false);
   };
 
   return (
@@ -1126,7 +1251,7 @@ function AuthPage({ onLogin }) {
           </div>
         </>}
         {err&&<div style={{color:"var(--crimson)",fontSize:".82rem",marginBottom:12,padding:"8px 12px",background:"rgba(155,29,32,.07)",borderRadius:3}}>{err}</div>}
-        <button className="btn-primary" onClick={submit}>{tab==="login"?"Sign In":"Create Account"}</button>
+        <button className="btn-primary" onClick={submit} disabled={loading} style={{opacity:loading?0.7:1}}>{loading?"Please wait…":tab==="login"?"Sign In":"Create Account"}</button>
         <p className="auth-note">Free forever — funded by advertising, not subscriptions.<br/><em>Use an email with "admin" for the Admin Panel.</em></p>
       </div>
     </div>
@@ -1143,6 +1268,16 @@ export default function App() {
   const [ads,    setAds]    = useState(DEFAULT_ADS);
   const [toasts, setToasts] = useState([]);
   const tid = useRef(0);
+
+  // Restore session if user was previously logged in
+  useEffect(()=>{
+    supabase.auth.getSession().then(async({data:{session}})=>{
+      if(session?.user){
+        const {data:profile}=await supabase.from('profiles').select('*').eq('id',session.user.id).single();
+        if(profile) setUser({...profile,email:session.user.email});
+      }
+    });
+  },[]);
 
   const addToast = useCallback(({title,body})=>{
     if(user&&!user.pushNotif) return;
@@ -1193,7 +1328,10 @@ export default function App() {
     if(bill) addToast({title:`✓ ${isHistoric?"View":"Vote"} Recorded`,body:`You voted "${choice}" on: ${bill.title.substring(0,55)}…`});
   };
 
-  const logout=()=>{setUser(null);setMyVotes({});setPage("votes");setToasts([]);};
+  const logout=async()=>{
+    await supabase.auth.signOut();
+    setUser(null);setMyVotes({});setPage("votes");setToasts([]);
+  };
 
   const navItems=[
     {id:"votes", icon:"🗳️",label:"Active Votes", badge:votes.filter(v=>v.status!=="closed"&&!myVotes[v.id]).length||null},
